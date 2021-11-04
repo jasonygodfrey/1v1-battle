@@ -47,10 +47,10 @@ public:
             forbiddenTalents.push_back(std::stoi(token));
         }
         ARENA_SLOT_1V1 = sConfigMgr->GetIntDefault("Arena1v1.ArenaSlotID", 3);
-        
+
         ArenaTeam::ArenaSlotByType.insert({ ARENA_TEAM_1V1, ARENA_SLOT_1V1 });
         ArenaTeam::ArenaReqPlayersForType.insert({ ARENA_TYPE_1V1, 2 });
-        
+
         BattlegroundMgr::queueToBg.insert({ BATTLEGROUND_QUEUE_1V1,   BATTLEGROUND_AA });
         BattlegroundMgr::QueueToArenaType.emplace(BATTLEGROUND_QUEUE_1V1, (ArenaType) ARENA_TYPE_1V1);
         BattlegroundMgr::ArenaTypeToQueue.emplace(ARENA_TYPE_1V1, (BattlegroundQueueTypeId) BATTLEGROUND_QUEUE_1V1);
@@ -469,7 +469,7 @@ public:
 
 };
 
-void AddSC_npc_1v1arena()
+void Add1v1ArenaScripts()
 {
     new configloader_1v1arena();
     new playerscript_1v1arena();
